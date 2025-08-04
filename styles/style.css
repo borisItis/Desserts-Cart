@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: blanchedalmond;
+}
+
+.desserts {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.desserts__title {
+  font-size: 40px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.desserts__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.dessert-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  background-color: #fff;
+  min-height: 400px;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.dessert-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0;
+}
+
+.dessert-card__image {
+  width: 100%;
+  border-radius: 12px;
+  height: auto;
+  object-fit: cover;
+}
+
+.dessert-card__add-btn {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: max-content;
+  white-space: nowrap;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dessert-card__add-btn:hover,
+.dessert-card__add-btn:focus {
+  background-color: blanchedalmond;
+  color: black;
+}
+
+.dessert-card__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.dessert-card__category {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: gray;
+}
+
+.dessert-card__name {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #222;
+}
+
+.dessert-card__price {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #a74e09;
+  font-weight: 700;
+}
+
+.dessert-card__category,
+.dessert-card__name,
+.dessert-card__price {
+  text-align: left;
+}
+
+.cart-controls {
+  align-items: center;
+  gap: 50px;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #a74e09;
+  font-weight: 800;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 24px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-controls button {
+  background: none;
+  border: none;
+  font-weight: 800;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dessert-card__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.view-cart {
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: #a74e09;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 962px) {
+  .desserts__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .dessert-card {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desserts__list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dessert-card {
+    min-height: 350px;
+    padding: 15px;
+  }
+
+  .dessert-card__add-btn {
+    padding: 10px 30px;
+    font-size: 13px;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dessert-card__add-btn {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+}

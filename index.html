@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Dessert | Product cart</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <section class="desserts">
+      <h1 class="desserts__title">Desserts</h1>
+      <div class="desserts__list">
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-waffle-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-waffle-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-waffle-desktop.jpg"
+                alt="Waffle with Berries"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Waffle with Berries to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+            <div class="cart-controls">
+              <button class="decrease">-</button>
+              <span class="quantity">1</span>
+              <button class="increase">+</button>
+            </div>
+          </div>
+          <p class="dessert-card__category">Waffle</p>
+          <h2 class="dessert-card__name">Waffle with Berries</h2>
+          <p class="dessert-card__price">$6.50</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source />
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-creme-brulee-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-creme-brulee-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-creme-brulee-desktop.jpg"
+                alt="Vanilla Bean Crème Brûlée"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Vanilla Bean Crème Brûlée to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Creme Brulee</p>
+          <h2 class="dessert-card__name">Vanilla Bean Crème Brûlée</h2>
+          <p class="dessert-card__price">$7.00</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-macaron-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-macaron-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-macaron-desktop.jpg"
+                alt="Macarons"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Macarons to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Macaron</p>
+          <h2 class="dessert-card__name">Macaron Mix of Five</h2>
+          <p class="dessert-card__price">$8.00</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-tiramisu-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-tiramisu-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-tiramisu-desktop.jpg"
+                alt="Tiramisu"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Tiramisu to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Tiramisu</p>
+          <h2 class="dessert-card__name">Classic Tiramisu</h2>
+          <p class="dessert-card__price">$5.50</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-baklava-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-baklava-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-baklava-desktop.jpg"
+                alt="Baklava"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Baklava to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Baklava</p>
+          <h2 class="dessert-card__name">Pistachio Baklava</h2>
+          <p class="dessert-card__price">$4.00</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-meringue-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-meringue-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-meringue-desktop.jpg"
+                alt="Merinque"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Merinque to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Merinque</p>
+          <h2 class="dessert-card__name">French Merinque</h2>
+          <p class="dessert-card__price">$3.75</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-cake-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-cake-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-cake-desktop.jpg"
+                alt="Cupcake"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Cake to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Cake</p>
+          <h2 class="dessert-card__name">Red Velvet Cupcake</h2>
+          <p class="dessert-card__price">$4.50</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-brownie-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-brownie-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-brownie-desktop.jpg"
+                alt="Cheesecake"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Brownie to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Brownie</p>
+          <h2 class="dessert-card__name">Salted Caramel Brownie</h2>
+          <p class="dessert-card__price">$5.50</p>
+        </article>
+        <article class="dessert-card">
+          <div class="dessert-card__image-wrapper">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="./assets/images/image-panna-cotta-tablet.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="./assets/images/image-panna-cotta-mobile.jpg"
+              />
+              <img
+                class="dessert-card__image"
+                src="./assets/images/image-panna-cotta-desktop.jpg"
+                alt="Panna Cotta"
+              />
+            </picture>
+            <button
+              class="dessert-card__add-btn"
+              type="button"
+              aria-label="Add Panna Cotta to cart"
+            >
+              <img
+                class="dessert-card__icon"
+                src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/external-app-web-application-2-creatype-outline-colourcreatype-11.png"
+                alt="external-app-web-application-2-creatype-outline-colourcreatype-11"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <p class="dessert-card__category">Panna Cotta</p>
+          <h2 class="dessert-card__name">Vanilla Panna Cotta</h2>
+          <p class="dessert-card__price">$6.50</p>
+          <div class="dessert-card__modal">
+            <h2>Your Order</h2>
+            <ul class="cart-items"></ul>
+            <p class="total-price">Total: $0.00</p>
+            <button class="confirm-btn">Confirm Order</button>
+            <button class="new-order-btn">New Order</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <script src="./products.js"></script>
+  </body>
+</html>
