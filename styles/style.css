@@ -249,6 +249,31 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .desserts__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .dessert-card {
+    min-height: 320px;
+    padding: 12px;
+  }
+
+  .dessert-card__add-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+    bottom: -10px;
+  }
+
+  .dessert-card__modal {
+    width: 95%;
+    font-size: 14px;
+    top: 90px;
+  }
+}
+
 @media (max-width: 768px) {
   .desserts__list {
     grid-template-columns: 1fr;
