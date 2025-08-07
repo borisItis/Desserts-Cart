@@ -143,25 +143,25 @@ body {
 
 .dessert-card__modal {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 300px;
-  max-height: 70vh;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
   border-radius: 8px;
   background: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  transition: right 0.3s ease;
   z-index: 1000;
-  padding: 15px;
+  padding: 20px;
   overflow-y: auto;
+  display: none;
 }
 
-.dessert-card__modal--visible {
+.dessert-card__modal.dessert-card__modal--visible {
+  display: block;
   right: 10px;
+  top: 80px;
 }
 
 .dessert-card__modal-content {
-  padding: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -178,6 +178,7 @@ body {
 .dessert-card__modal-title {
   color: #a74e09;
   font-size: 35px;
+  margin-bottom: 15px;
 }
 
 .dessert-card__modal-item {
@@ -194,10 +195,13 @@ body {
 
 .dessert-card__modal-item-name {
   font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .dessert-card__modal-item-quantity {
   color: #666;
+  font-size: 14px;
 }
 
 .dessert-card__modal-item-price {
@@ -241,13 +245,36 @@ body {
   z-index: 1001;
 }
 
-@media (max-width: 962px) {
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
   .desserts__list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 10px;
   }
+
   .dessert-card {
-    min-height: 380px;
+    min-height: 320px;
+    padding: 12px;
+  }
+
+  .dessert-card__add-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+    bottom: -10px;
+  }
+
+  .dessert-card__modal {
+    width: 95%;
+    font-size: 14px;
+    top: 90px;
+  }
+
+  .dessert-card__modal-title {
+    font-size: 28px;
   }
 }
 
@@ -270,15 +297,33 @@ body {
 }
 
 @media (max-width: 480px) {
+  .desserts__list {
+    gap: 16px;
+    padding: 0 8px;
+  }
+
+  .dessert-card {
+    min-height: 300px;
+    padding: 10px;
+  }
+
   .dessert-card__add-btn {
     padding: 8px 20px;
     font-size: 12px;
   }
-}
 
-@media (max-width: 480px) {
   .dessert-card__modal {
-    padding: 6px 16px;
-    font-size: 10px;
+    width: 65%;
+    font-size: 14px;
+    top: 90px;
+  }
+
+  .dessert-card__modal-title {
+    font-size: 22px;
+  }
+
+  .dessert-card__modal-btn {
+    font-size: 0.9em;
+    padding: 10px;
   }
 }
