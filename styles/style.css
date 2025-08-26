@@ -143,22 +143,21 @@ body {
 
 .dessert-card__modal {
   position: fixed;
-  width: 90%;
-  max-width: 400px;
+  top: 60px;
+  right: 20px;
+  width: 300px;
   max-height: 80vh;
-  border-radius: 8px;
-  background: white;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 20px;
-  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
   display: none;
+  flex-direction: column;
+  z-index: 1000;
 }
 
-.dessert-card__modal.dessert-card__modal--visible {
-  display: block;
-  right: 10px;
-  top: 80px;
+.dessert-card__modal--visible {
+  display: flex;
 }
 
 .dessert-card__modal-content {
@@ -173,6 +172,7 @@ body {
   padding: 0;
   margin: 20px 0;
   overflow-y: auto;
+  max-height: 300px;
 }
 
 .dessert-card__modal-title {
@@ -184,8 +184,35 @@ body {
 .dessert-card__modal-item {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 4px 25px 4px 0;
+  position: relative;
   border-bottom: 1px solid #eee;
+}
+
+.dessert-card__modal-item > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dessert-card__modal-item .remove-item {
+  background: transparent;
+  border: none;
+  color: #a74e09;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.dessert-card__modal-item span:last-child {
+  margin-right: 25px;
+  white-space: nowrap;
 }
 
 .dessert-card__modal-item-info {
@@ -245,6 +272,12 @@ body {
   z-index: 1001;
 }
 
+.dessert-card__modal-list .empty {
+  text-align: center;
+  color: #999;
+  padding: 20px 0;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -268,7 +301,7 @@ body {
   }
 
   .dessert-card__modal {
-    width: 95%;
+    width: 50%;
     font-size: 14px;
     top: 90px;
   }
@@ -293,7 +326,7 @@ body {
   }
 
   .dessert-card__modal {
-    width: 95%;
+    width: 50%;
     font-size: 14px;
     top: 90px;
   }
@@ -347,8 +380,15 @@ body {
     font-size: 22px;
   }
 
+  .dessert-card__modal-item {
+    padding: 4px 20px 4px 0;
+  }
+
   .dessert-card__modal-btn {
     font-size: 0.9em;
     padding: 10px;
+  }
+  .dessert-card__modal-item span:last-child {
+    margin-right: 20px;
   }
 }

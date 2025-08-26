@@ -1,9 +1,9 @@
-fetch("./data.json").then((response) => {
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-});
+fetch("./data.json")
+  .then((response) => {
+    if (!response.ok) throw new Error("Network response was not ok");
+    return response.json();
+  })
+  .catch((err) => console.error(err));
 
 const cartItems = [];
 const cartModal = document.querySelector(".dessert-card__modal");
@@ -59,37 +59,73 @@ const updateCartDisplay = () => {
   cartItemsList.innerHTML = "";
   let total = 0;
 
-  cartItems.forEach((item) => {
+  if (cartItems.length === 0) {
+    cartItemsList.innerHTML = `<li class="empty">В корзине пока нет товаров</li>`;
+    cartTotal.textContent = `Total: $0.00`;
+    cartCounter.textContent = "0";
+    return;
+  }
+
+  cartItems.forEach((item, index) => {
     total += item.price * item.quantity;
     cartItemsList.innerHTML += `
-          <li class="dessert-card__modal-item">
-            <div>
-              <span>${item.name}</span> <span>x${item.quantity}</span>
-            </div>
-            <span>$${(item.price * item.quantity).toFixed(2)}</span>
-          </li>
-        `;
+      <li class="dessert-card__modal-item">
+        <div>
+          <span>${item.name}</span> 
+          <span>x${item.quantity}</span>
+        </div>
+        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        <button class="remove-item" data-index="${index}">&times;</button>
+      </li>
+    `;
   });
 
   cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-  cartCounter.textContent = cartItems.length;
+  cartCounter.textContent = cartItems.reduce((acc, i) => acc + i.quantity, 0);
+  cartItemsList.querySelectorAll(".remove-item").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const idx = parseInt(btn.dataset.index);
+      removeItem(idx);
+    })
+  );
 };
 
 const updateQuantity = (name, change) => {
-  const item = cartItems.find((item) => item.name === name);
+  const item = cartItems.find((i) => i.name === name);
   if (!item) return;
-  item.quantity = Math.max(1, item.quantity + change);
-  updateCartDisplay();
+  item.quantity += change;
+
+  if (item.quantity <= 0) {
+    removeItem(cartItems.indexOf(item));
+  } else {
+    updateCartDisplay();
+  }
+};
+
+const removeItem = (index) => {
+  if (index >= 0 && index < cartItems.length) {
+    const item = cartItems[index];
+    const addButton = item.element.querySelector(".dessert-card__add-btn");
+    const controls = item.element.querySelector(".dessert-card__btn-control");
+    if (addButton) addButton.style.display = "inline-block";
+    if (controls) controls.style.display = "none";
+    cartItems.splice(index, 1);
+    updateCartDisplay();
+  }
 };
 
 cartIcon.addEventListener("click", () => {
-  cartModal.classList.toggle("dessert-card__modal--visible");
-  document.body.classList.toggle("no-scroll");
+  const isVisible = cartModal.classList.toggle("dessert-card__modal--visible");
+  document.body.classList.toggle("no-scroll", isVisible);
 });
 
 confirmBtn.addEventListener("click", () => {
+  if (cartItems.length === 0) return;
   alert("Спасибо за заказ! Мы скоро свяжемся с вами.");
+  cartItems.length = 0;
   updateCartDisplay();
+  cartModal.classList.remove("dessert-card__modal--visible");
+  document.body.classList.remove("no-scroll");
 });
 
 document.addEventListener("click", (e) => {
@@ -97,5 +133,6 @@ document.addEventListener("click", (e) => {
   const isCartIcon = cartIcon.contains(e.target);
   if (!isClickInside && !isCartIcon) {
     cartModal.classList.remove("dessert-card__modal--visible");
+    document.body.classList.remove("no-scroll");
   }
 });
